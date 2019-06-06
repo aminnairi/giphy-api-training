@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+    <head>
+        <link rel='preload' href='giphy.js' as='script'>
+        <title>Giphy API Training</title>
+        <style>
+            html, body {
+                overflow: hidden;
+            }
+        </style>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta name='description' content='Giphy API Training'>
+        <script async>
+            'use strict';
+
+            window.addEventListener('load', function() {
+                var giphy   = document.createElement('script');
+                giphy.src   = 'giphy.js';
+                giphy.async = true;
+
+                document.head.appendChild(giphy);
+
+                giphy.addEventListener('load', function() {
+                    var main = document.getElementsByTagName('main');
+
+                    if (
+                        main instanceof HTMLCollection
+                        && main[0] instanceof HTMLElement
+                        && Elm
+                        && Elm.Giphy
+                        && Elm.Giphy.init
+                    ) {
+                        Elm.Giphy.init({
+                            node: main[0]
+                        });
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <main></main>
+    </body>
+</html>
